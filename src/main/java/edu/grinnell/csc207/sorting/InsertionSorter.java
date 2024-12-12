@@ -55,6 +55,22 @@ public class InsertionSorter<T> implements Sorter<T> {
    */
   @Override
   public void sort(T[] values) {
-    // STUB
+    // go through every value in array
+    // compare to previous element, shift left if compares as less than prev
+    int current;
+    int prev;
+    for (int i = 0; i < values.length; i++) {
+      current = i;
+      if (current > 0) {
+        prev = i - 1;
+        while ((current > 0) && (order.compare(values[current], values[prev]) < 0)) {
+          T temp = values[current];
+          values[current] = values[prev];
+          values[prev] = temp;
+          current--;
+          prev--;
+        } // while
+      } // if
+    } // for
   } // sort(T[])
 } // class InsertionSorter
