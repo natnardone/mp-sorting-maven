@@ -120,4 +120,54 @@ public class TestSorter {
     ArrayUtils.permute(original);
     assertSorts(expected, original, intSorter);
   } // permutedIntegers
+
+  /**
+   * Ensure that an empty array sorts correctly.
+   */
+  @Test
+  public void emptyArrayTest() {
+    Integer[] original = new Integer[0];
+    Integer[] expected = original.clone();
+    assertSorts(expected, original, intSorter);
+  } // emptyArrayTest
+
+  /**
+   * Ensure that an array of all the same value sorts correctly.
+   */
+  @Test
+  public void sameValueArrayTest() {
+    String[] original = {"a", "a", "a", "a", "a"};
+    String[] expected = original.clone();
+    assertSorts(expected, original, stringSorter);
+  } // sameValueArrayTest
+
+  /**
+   * Ensure that an almost-sorted array sorts correctly.
+   */
+  @Test
+  public void almostSortedTest() {
+    Integer[] original = {1, 2, 3, 4, 6, 5};
+    Integer[] expected = {1, 2, 3, 4, 5, 6};
+    assertSorts(expected, original, intSorter);
+  } // almostSortedTest
+
+  /**
+   * Ensure that an array of only one value sorts correctly.
+   */
+  @Test
+  public void oneValueTest() {
+    String[] original = {"hello"};
+    String[] expected = {"hello"};
+    assertSorts(expected, original, stringSorter);
+  } // oneValueTest
+
+  /**
+   * Ensure that an unsorted array sorts correctly.
+   */
+  @Test
+  public void unsortedTest() {
+    Integer[] original = {20, 3, 17, 9, 1, 13};
+    Integer[] expected = {1, 3, 9, 13, 17, 20};
+    assertSorts(expected, original, intSorter);
+  } // unsortedTest
 } // class TestSorter
