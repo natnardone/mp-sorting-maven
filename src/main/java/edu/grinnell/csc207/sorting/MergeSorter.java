@@ -117,8 +117,7 @@ public class MergeSorter<T> implements Sorter<T> {
         values[i] = newArray[curLeft];
         curLeft++;
       } // for
-    } // if
-    else if (curRight < endRight) {
+    } else if (curRight < endRight) {
       for (int i = index; i < u; i++) {
         values[i] = newArray[curRight];
         curRight++;

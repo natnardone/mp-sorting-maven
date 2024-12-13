@@ -170,4 +170,14 @@ public class TestSorter {
     Integer[] expected = {1, 3, 9, 13, 17, 20};
     assertSorts(expected, original, intSorter);
   } // unsortedTest
+
+  /**
+   * Test DNF algorithm for Quicksort.
+   */
+  @Test
+  public void dnfTest() {
+    Integer[] original = {2, 1, 2, 0, 0, 1, 1, 2, 0, 0, 2, 1};
+    Integer[] expected = {0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2};
+    assertSorts(expected, original, intSorter);
+  }
 } // class TestSorter
