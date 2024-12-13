@@ -70,10 +70,17 @@ public class Quicksorter<T> implements Sorter<T> {
    *   the upper bound to sort to
    */
   public void quickSortHelper(T[] values, int lb, int ub) {
+    System.out.println(lb + " " + ub);
     if (ub > lb) {
+      System.out.println("recurse");
       int[] pivots = partition(values, lb, ub);
-      quickSortHelper(values, lb, pivots[0]); // pivots[0] is first index of pivot(s)
-      quickSortHelper(values, pivots[1], ub); // pivots[1] is first value after pivot(s)
+      System.out.println("lb: " + lb + " pivots[0]: " + pivots[0] + " ub: " + ub + " pivots[1]: " + pivots[1]);
+      if (lb < pivots[0]) {
+        quickSortHelper(values, lb, pivots[0]); // pivots[0] is first index of pivot(s)
+      }
+      if (ub > pivots[1]) {
+        quickSortHelper(values, pivots[1], ub); // pivots[1] is first value after pivot(s)
+      }
     } // if
   } // quickSortHelper(T[], int, int)
 
@@ -90,16 +97,18 @@ public class Quicksorter<T> implements Sorter<T> {
    */
   public int[] partition(T[] values, int lb, int ub) {
     int pivot = ((int) (Math.random() * (ub - lb))) + lb;
+    System.out.println("pivot in partition: " + pivot + " " + values[pivot]);
     T temp = values[pivot];
-    for (int i = pivot - 1; i >= lb; i--) {
-      values[i + 1] = values[i];
-    } // for
-    values[lb] = temp; // pivot now in position 0
-
+    if (pivot != lb) {
+      for (int i = pivot - 1; i >= lb; i--) {
+        values[i + 1] = values[i];
+      } // for
+      values[lb] = temp; // pivot now in position 0
+    }
     int r = lb;
     int w = lb;
     int b = lb;
-    int n = ub - lb;
+    int n = ub;
 
     while (b < n) {
       // if values[b] is less than pivot
