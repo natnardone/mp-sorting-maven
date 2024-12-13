@@ -70,11 +70,8 @@ public class Quicksorter<T> implements Sorter<T> {
    *   the upper bound to sort to
    */
   public void quickSortHelper(T[] values, int lb, int ub) {
-    System.out.println(lb + " " + ub);
     if (ub > lb) {
-      System.out.println("recurse");
       int[] pivots = partition(values, lb, ub);
-      System.out.println("lb: " + lb + " pivots[0]: " + pivots[0] + " ub: " + ub + " pivots[1]: " + pivots[1]);
       if (lb < pivots[0]) {
         quickSortHelper(values, lb, pivots[0]); // pivots[0] is first index of pivot(s)
       }
@@ -97,7 +94,6 @@ public class Quicksorter<T> implements Sorter<T> {
    */
   public int[] partition(T[] values, int lb, int ub) {
     int pivot = ((int) (Math.random() * (ub - lb))) + lb;
-    System.out.println("pivot in partition: " + pivot + " " + values[pivot]);
     T temp = values[pivot];
     if (pivot != lb) {
       for (int i = pivot - 1; i >= lb; i--) {
