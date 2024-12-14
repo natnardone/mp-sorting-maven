@@ -3,7 +3,9 @@ package edu.grinnell.csc207.sorting;
 import org.junit.jupiter.api.BeforeAll;
 
 /**
- * Tests of my sort..
+ * Tests of my sort.
+ *
+ * @author Natalie Nardone
  */
 public class TestNardoneNatalieSort extends TestSorter {
   /**

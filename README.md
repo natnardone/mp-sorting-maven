@@ -16,7 +16,4 @@ This code may be found at <https://github.com/natnardone/mp-sorting-maven>. The 
 Description of custom sorting algorithm
 ---------------------------------------
 
-Notes on using Copilot (or other AI)
-------------------------------------
-
-_This section is optional_
+My sort, found in `NardoneNatalieSort.java`, uses primarily merge sort to sort the array, but switches the insertion sort when the subarray being sorted has 10 or fewer elements.
