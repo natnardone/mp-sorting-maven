@@ -74,10 +74,10 @@ public class Quicksorter<T> implements Sorter<T> {
       int[] pivots = partition(values, lb, ub);
       if (lb < pivots[0]) {
         quickSortHelper(values, lb, pivots[0]); // pivots[0] is first index of pivot(s)
-      }
+      } // if
       if (ub > pivots[1]) {
         quickSortHelper(values, pivots[1], ub); // pivots[1] is first value after pivot(s)
-      }
+      } // if
     } // if
   } // quickSortHelper(T[], int, int)
 
@@ -100,7 +100,7 @@ public class Quicksorter<T> implements Sorter<T> {
         values[i + 1] = values[i];
       } // for
       values[lb] = temp; // pivot now in position 0
-    }
+    } // if
     int r = lb;
     int w = lb;
     int b = lb;
