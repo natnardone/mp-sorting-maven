@@ -71,7 +71,7 @@ public class MergeSorter<T> implements Sorter<T> {
    */
   public void mergeSortHelper(T[] values, int l, int u) {
     if (u - l > 0) {
-      int midpoint = ((u - l) / 2) + l; // fix
+      int midpoint = ((u - l) / 2) + l;
       mergeSortHelper(values, l, midpoint);
       mergeSortHelper(values, midpoint + 1, u);
       merge(values, l, u + 1, midpoint + 1); // merge values from l to r
